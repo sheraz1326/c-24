@@ -6,7 +6,7 @@ const Constraint = Matter.Constraint;
 var engine, world;
 var canvas;
 var palyer, playerBase, playerArcher;
-var playerArrows = [];
+var playerArrow;
 
 
 function preload() {
@@ -39,6 +39,11 @@ function setup() {
     120,
     120
   );
+  
+  playerArrow = new PlayerArrow(
+  playerArcher.body.position.x,
+  playerArcher.body.position.y,
+  100,10)
 }
 
 function draw() {
@@ -49,9 +54,10 @@ function draw() {
   image(playerimage,player.position.x,player.position.y,50,180)
 
   playerArcher.display();
+  playerArrow.display();
 
   if(keyCode === "SPACE"){
-    playerArrows.shoot(playerArcher.body.angle);
+    playerArrow.shoot(playerArcher.body.angle);
   }
 
   // Title3
