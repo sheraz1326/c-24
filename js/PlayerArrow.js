@@ -24,7 +24,7 @@ class PlayerArrow {
       y: this.velocity.y * (180 / 3.14)
     });
 
-    Matter.body.setStatic(this.body,false);
+    Matter.Body.setStatic(this.body,false);
   }
 
   display() {
